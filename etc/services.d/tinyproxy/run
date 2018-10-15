@@ -1,2 +1,3 @@
 #!/bin/sh
+sleep 5  # wait a while. proxychains.conf should be filled up with proxies
 proxychains tinyproxy -d -c /etc/tinyproxy.conf
