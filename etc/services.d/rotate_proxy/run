@@ -1,8 +1,0 @@
-#!/bin/sh
-while [ -n "$PROXY_LIST" ];
-do
-    cp /etc/proxychains/proxychains.conf.head /etc/proxychains/proxychains.conf;
-    echo "$PROXY_LIST" | tr ',' '\n' | shuf | head -2 >> /etc/proxychains/proxychains.conf;
-    killall tinyproxy;
-    sleep 30m;
-done;
