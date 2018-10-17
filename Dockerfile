@@ -1,11 +1,13 @@
 FROM alpine:edge
+MAINTAINER Slavik Svyrydiuk "slavik@svyrydiuk.eu"
 
-RUN apk update --no-cache && \
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+		>> /etc/apk/repositories && \
+	apk update --no-cache && \
     apk add \
-        proxychains-ng \
+        3proxy \
         runit \
         tini \
-        tinyproxy \
         tor
 
 COPY etc /etc
