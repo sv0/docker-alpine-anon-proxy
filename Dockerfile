@@ -2,8 +2,8 @@ FROM alpine:edge
 MAINTAINER Slavik Svyrydiuk "slavik@svyrydiuk.eu"
 
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-		>> /etc/apk/repositories && \
-	apk update --no-cache && \
+	>> /etc/apk/repositories && \
+    apk update --no-cache &&
     apk add \
         3proxy \
         runit \
