@@ -1,9 +1,0 @@
-dynamic_chain
-
-tcp_read_time_out 20000
-tcp_connect_time_out 10000
-proxy_dns
-localnet 127.0.0.0/255.0.0.0
-
-[ProxyList]
-socks5  127.0.0.1 9050
