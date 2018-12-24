@@ -1,4 +1,4 @@
-VERSION=0.0.1
+VERSION=0.0.2
 TAG=alpine-anon-proxy
 
 run: build
@@ -8,4 +8,4 @@ build:
 	docker build -t $(TAG):latest -t $(TAG):$(VERSION) .
 
 clean:
-	docker images | grep -E "$(TAG)|<none>" | awk '{print $3}' | xargs docker rmi -f
+	docker images | grep -E "$(TAG)" | awk '{print $$3}' | xargs docker rmi -f

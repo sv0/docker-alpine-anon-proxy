@@ -1,2 +1,6 @@
 #!/bin/sh
-3proxy /etc/3proxy.cfg
+PROXY_CFG="/etc/3proxy.cfg"
+cat /etc/3proxy.cfg.head > $PROXY_CFG
+/bin/sh /usr/local/bin/getproxies.sh >> $PROXY_CFG
+cat /etc/3proxy.cfg.tail >> $PROXY_CFG
+3proxy $PROXY_CFG
