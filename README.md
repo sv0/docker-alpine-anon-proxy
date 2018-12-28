@@ -10,26 +10,25 @@ which contains comma separated list of proxies.
 
 Proxy list format:
 
-    protocol IP port username password
+    <protocol> <IP> <port> [username] [password]
+
 
 e.g. `socks5 100.10.10.10 1080`
 
+Protocol, IP address and port are required.
 
-username and password are optional. 
+Username and password are optional. 
 
 
-    docker run -e PROXY_LIST="socks5 16.88.18.50 1080 vasia passw0rd, http 140.227.70.68 3128" \
+    docker run -e PROXY_LIST="socks5 192.168.1.1 1080 username passwd, http 10.0.0.1 3128" \
                -p 0.0.0.0:3128:3128 \
                --name alpine-anon-proxy --rm \
-               alpine-anon-proxy
+               slavik0/docker-alpine-anon-proxy:latest
 
 
 ## How it works
 
-   
-             
-             
-                                             random next hop
+                                                random hop
                                         ╔═══════════════════════╗      │ I
                                     → → ║http or socks proxy #1 ║ → →  │ N
                                  ↑      ╚═══════════════════════╝      │ T
