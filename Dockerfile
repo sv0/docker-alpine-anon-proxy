@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 MAINTAINER Slavik Svyrydiuk "slavik@svyrydiuk.eu"
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" \
